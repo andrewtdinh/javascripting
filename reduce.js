@@ -1,9 +1,9 @@
 function countWords(inputWords) {
-  var returnObj = {}
   return inputWords.reduce(function(accum, curr){
-    if (!returnObj[curr]) {returnObj[curr] = 1}
-    else {returnObj[curr] += 1}
-  }, returnObj);
+    if (accum[curr]) {accum[curr] += 1}
+    else {accum[curr] = 1}
+    return accum;
+  }, {});
 }
 
 module.exports = countWords
